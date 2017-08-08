@@ -4,16 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "npm run watch & webpack-dev-server --config dev/webpack.config.js --open",
     "build": "rollup -c",
-    "watch": "rollup -c -w",
-    "serve": "npm run watch & webpack-dev-server --config dev/webpack.config.js"
+    "watch": "rollup -c -w"
   },
   "devDependencies": {
     "ava": "^0.21.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "^6.24.1",
-    "budo": "^10.0.4",
     "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1"
   },

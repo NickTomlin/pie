@@ -28,6 +28,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'Preact Pie',
+      template: `${__dirname}/index.ejs`
+    })
   ]
 };
