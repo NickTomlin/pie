@@ -1,18 +1,16 @@
 import { render, h, Component } from 'preact'
 
-// this is the poor person's technique introduced by
-// https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936
-export default class Pizza extends Component {
-  getCoordinatesForPercent (percentage) {
-    const x = Math.cos(2 * Math.PI * percentage);
-    const y = Math.sin(2 * Math.PI * percentage);
+function getCoordinatesForPercent (percentage) {
+  const x = Math.cos(2 * Math.PI * percentage);
+  const y = Math.sin(2 * Math.PI * percentage);
 
-    return [x, y];
-  }
+  return [x, y];
+}
 
-  generateSlicePath (cumulativePercent, slicePercent) {
-    const [startX, startY] = this.getCoordinatesForPercent(cumulativePercent)
-    const [endX, endY] = this.getCoordinatesForPercent(cumulativePercent + slicePercent)
+export class Slice extends Component {
+  generatePath (cumulativePercent, slicePercent) {
+    const [startX, startY] = getCoordinatesForPercent(cumulativePercent)
+    const [endX, endY] = getCoordinatesForPercent(cumulativePercent + slicePercent)
     const largeArcFlag = slicePercent > .5 ? 1 : 0
 
     return [
@@ -22,26 +20,29 @@ export default class Pizza extends Component {
     ].join(' ');
   }
 
+  render () {
+    return <path
+      d={this.generatePath(this.props.cumulativePercent, this.props.percent)}
+      fill={this.props.fill}
+    />
+  }
+}
+
+// this is the poor person's technique introduced by
+// https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936
+export default class Pizza extends Component {
   renderSlices(sliceData) {
     let cumulativePercent = 0
 
 		return sliceData.map(slice => {
-      let elem = <path
-        d={this.generateSlicePath(cumulativePercent, slice.percent)}
-        fill={slice.fill}
-      />
+      let elem = <Slice cumulativePercent={cumulativePercent} percent={slice.percent} fill={slice.fill}/>
       cumulativePercent = cumulativePercent + slice.percent
       return elem
 		})
   }
 
   render () {
-    const slices = this.renderSlices([
-      { percent: 0.1, fill: 'Coral'  },
-      { percent: 0.7, fill: 'CornflowerBlue'  },
-      { percent: 0.2, fill: '#00ab6b'  },
-    ])
-
+    const slices = this.props.data ? this.renderSlices(this.props.data) : null
     return (
       <svg
         style="transform: rotate(-90deg);"
