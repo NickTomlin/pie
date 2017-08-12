@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run watch & webpack-dev-server --config dev/webpack.config.js --open",
+    "test": "standard",
     "build": "rollup -c",
     "watch": "rollup -c -w"
   },
@@ -27,7 +28,17 @@
     "prismjs": "^1.6.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^4.3.1",
+    "standard": "^10.0.3",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "preact": "^8.2.1"
+  },
+  "standard": {
+    "ignore": [
+      "docs/**",
+      "dist/**"
+    ]
   }
 }
