@@ -1,7 +1,7 @@
 {
   "name": "@nicktomlin/pie",
-  "description": "",
-  "version": "1.0.0",
+  "description": "A tiny pie chart plugin for (P)React.",
+  "version": "1.0.0-alpha.1",
   "main": "dist/pie.cjs.js",
   "license": "MIT",
   "scripts": {
