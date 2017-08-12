@@ -1,49 +1,67 @@
 import { render, h, Component } from 'preact'
 
-export class Pizza {
-  constructor () {
-    this.total = 185
-    this.primary = 'yellowgreen'
-  }
-
+export default class Pizza extends Component {
   componentWillMount () {
     document.body.style.height = "400px"
     document.body.style.width = "400px"
   }
 
-  calc (percentage) {
-    // what percentage of whatever our max radius
-    // x is 40% of 185
-    // 185 / 100 * 40
-    // ? = 40 % of 185
-    // 185 / 100 * 40
+  // this is the poor person's technique introduced by
+  // https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936
+  getCoordinatesForPercent (percentage) {
+    const x = Math.cos(2 * Math.PI * percentage);
+    const y = Math.sin(2 * Math.PI * percentage);
 
-    return [50, 50, Math.ceil(this.total / 100 * percentage)]
+    return [x, y];
+  }
+
+  pathForSlice (cumulativePercent, percent) {
+    const [startX, startY] = this.getCoordinatesForPercent(cumulativePercent)
+    const [endX, endY] = this.getCoordinatesForPercent(cumulativePercent + percent)
+    const largeArcFlag = percent > .5 ? 1 : 0
+
+		return [
+			`M ${startX} ${startY}`,
+			`A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY}`,
+			`L 0 0`,
+		].join(' ');
+  }
+
+  renderSlices(sliceData) {
+    let cumulativePercent = 0
+    return sliceData.map((slice) => {
+      const [startX, startY] = this.getCoordinatesForPercent(cumulativePercent)
+      cumulativePercent = cumulativePercent + slice.percent
+      const [endX, endY] = this.getCoordinatesForPercent(cumulativePercent)
+      const largeArcFlag = slice.percent > .5 ? 1 : 0
+
+      const pathData = [
+        `M ${startX} ${startY}`,
+        `A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY}`,
+        `L 0 0`,
+      ].join(' ');
+
+      return <path
+        d={pathData}
+        fill={slice.fill}
+      />
+    })
   }
 
   render () {
-    // our radius is 3
-    // the full circle is 2 * 3.14 * r (18.84)
-    // so to get a full circle we could do a dasharray of 18.85 or 19
-    let [cx, cy, dash] = this.calc(30)
-    let r = 30
+    const slices = this.renderSlices([
+      { percent: 0.20, fill: 'red' },
+      { percent: 0.30, fill: 'blue' },
+      { percent: 0.40, fill: 'green' },
+    ])
 
     return (
       <svg
         style="background: yellowgreen; border-radius: 50%; transform: rotate(-90deg);"
-        viewBox="0 0 100 100"
+        viewBox="-1 -1 2 2"
         >
-        <circle
-          r={r}
-          cx={cx}
-          cy={cy}
-          fill="yellowgreen"
-          stroke="#666"
-          stroke-width={r * 2}
-          stroke-dasharray={`${dash} ${Math.ceil(this.total)}`}
-          >
-        </circle>
-  		</svg>
+        {slices}
+      </svg>
     )
   }
 }
