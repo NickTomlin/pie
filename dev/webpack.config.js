@@ -1,4 +1,5 @@
 const path = require('path');
+const docs = path.resolve(__dirname, '..', 'docs')
 const dist = path.resolve(__dirname, '..', 'dist')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -7,7 +8,7 @@ module.exports = {
   plugins: [],
   output: {
     filename: '[name].bundle.js',
-    path: dist
+    path: docs
   },
   devServer: {
     contentBase: dist,
