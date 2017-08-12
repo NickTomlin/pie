@@ -1,11 +1,10 @@
-const path = require('path');
+const path = require('path')
 const docs = path.resolve(__dirname, '..', 'docs')
 const dist = path.resolve(__dirname, '..', 'dist')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry:  path.resolve(__dirname, 'index.js'),
-  plugins: [],
+  entry: path.resolve(__dirname, 'index.js'),
   output: {
     filename: '[name].bundle.js',
     path: docs
@@ -22,7 +21,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [['transform-react-jsx', { pragma: 'h' }]],
+            plugins: [['transform-react-jsx', { pragma: 'h' }]]
           }
         }
       }
@@ -34,4 +33,4 @@ module.exports = {
       template: `${__dirname}/index.ejs`
     })
   ]
-};
+}
