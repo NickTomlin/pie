@@ -31,7 +31,7 @@ export class Slice extends Component {
 
 // this is the poor person's technique introduced by
 // https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936
-export default class Pie extends Component {
+export class Pie extends Component {
   renderSlices() {
     let cumulativePercent = 0
 
