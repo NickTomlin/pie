@@ -3,7 +3,7 @@ pie
 
 A tiny pie chart plugin for (P)React.
 
-:warning: this is published as an RC not considered ready for wide use. I'm just playing around :warning:
+:warning: this is published as an alpha not considered ready for wide use. I'm just playing around :warning:
 
 ```shell
 npm i @nicktomlin/pie
