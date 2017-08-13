@@ -21,7 +21,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [['transform-react-jsx', { pragma: 'h' }]]
+            plugins: [['transform-react-jsx', {}]]
           }
         }
       }
@@ -29,8 +29,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Preact Pie',
+      title: 'Pie',
       template: `${__dirname}/index.ejs`
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@nicktomlin/pie': `${dist}/pie.cjs.js`
+    }
+  }
 }

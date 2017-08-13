@@ -1,6 +1,7 @@
 {
   "name": "@nicktomlin/pie",
   "description": "A tiny pie chart plugin for (P)React.",
+  "respository": "https://github.com:NickTomlin/pie.git",
   "version": "1.0.0-alpha.1",
   "main": "dist/pie.cjs.js",
   "license": "MIT",
@@ -10,24 +11,31 @@
     "build": "rollup -c",
     "build:production": "NODE_ENV=production npm run build",
     "watch": "rollup -c -w",
-    "prepublish": "npm run build:production"
+    "prepublishOnly": "npm run build:production"
+  },
+  "peerDependencies": {
+    "react": ">=15"
   },
   "devDependencies": {
-    "rollup-plugin-uglify": "^2.0.1",
-    "preact": "^8.2.1",
     "ava": "^0.21.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "^6.24.1",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
+    "preact": "^8.2.1",
     "prismjs": "^1.6.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^4.3.1",
     "standard": "^10.0.3",
     "webpack": "^3.4.1",
@@ -38,5 +46,6 @@
       "docs/**",
       "dist/**"
     ]
-  }
+  },
+  "dependencies": {}
 }

@@ -8,6 +8,7 @@
   ],
   "plugins": [
     "external-helpers",
-    ["transform-react-jsx", { pragma: "h" }]
+    "syntax-object-rest-spread",
+    ["transform-react-jsx", {}]
   ]
 }

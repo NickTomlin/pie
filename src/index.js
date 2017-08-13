@@ -1,4 +1,4 @@
-import { render, h, Component, cloneElement } from 'preact' // eslint-disable-line
+import React, {cloneElement} from 'react'
 
 function getCoordinatesForPercent (percentage) {
   const x = Math.cos(2 * Math.PI * percentage)
@@ -7,7 +7,7 @@ function getCoordinatesForPercent (percentage) {
   return [x, y]
 }
 
-export class Slice extends Component {
+export class Slice extends React.Component {
   generatePath (start, slicePercent) {
     const [startX, startY] = getCoordinatesForPercent(start)
     const [endX, endY] = getCoordinatesForPercent(start + slicePercent)
@@ -21,28 +21,32 @@ export class Slice extends Component {
   }
 
   render () {
+    const { start, percent, ...rest } = this.props
     return <path
-      {...this.props}
-      d={this.generatePath(this.props.start, this.props.percent)}
+      {...rest}
+      d={this.generatePath(start, percent)}
       fill={this.props.fill}
     />
   }
 }
 
+const svgStyle = { transform: 'rotate(-90deg)' }
+
 // this is the poor person's technique introduced by
 // https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936
-export class Pie extends Component {
+export class Pie extends React.Component {
   renderSlices () {
     let cumulativePercent = 0
 
     return this.props.children.map((child) => {
-      let name = child.nodeName.name
-      if (name === 'Slice') {
-        let { percent, fill } = child.attributes
-        let start = cumulativePercent
+      if (child.type === Slice) {
+        const {percent, fill} = child.props
+        const key = child.key || percent + fill
+        const start = cumulativePercent
         cumulativePercent = cumulativePercent + percent
 
         return cloneElement(child, {
+          key,
           start,
           percent,
           fill
@@ -54,7 +58,7 @@ export class Pie extends Component {
   render () {
     return (
       <svg
-        style='transform: rotate(-90deg);'
+        style={svgStyle}
         viewBox='-1 -1 2 2'
         >
         {this.renderSlices()}

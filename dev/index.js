@@ -1,6 +1,7 @@
-import { h, render } from 'preact' // eslint-disable-line
-import {Pie, Slice} from '../dist/preact-pie.built.js'
-import Example from './example'
+import React from 'react' // eslint-disable-line
+import { render } from 'react-dom'
+import {Pie, Slice} from '@nicktomlin/pie'
+import Snippet from './snippet'
 
 const slices = [
   { percent: 0.1, fill: 'Coral' },
@@ -8,11 +9,11 @@ const slices = [
   { percent: 0.2, fill: '#00ab6b' }
 ]
 
-class DataPie {
+class DataPie extends React.Component {
   render () {
     return <Pie>
       {this.props.data.map((x) => {
-        return <Slice percent={x.percent} fill={x.fill} />
+        return <Slice key={x.fill} percent={x.percent} fill={x.fill} />
       })}
     </Pie>
   }
@@ -24,7 +25,7 @@ render(
     <article>
       <h1>Declarative</h1>
 
-      <Example syntax='jsx'>{`
+      <Snippet syntax='jsx'>{`
         import {Pie, Slice} from '@nicktomlin/pie'
 
         <Pie>
@@ -32,7 +33,7 @@ render(
           <Slice percent={0.7} fill='CornFlowerBlue'/>
           <Slice percent={0.2} fill='#00ab6b' />
         </Pie>`}
-      </Example>
+      </Snippet>
 
       <Pie>
         <Slice percent={0.1} fill='Coral' />
@@ -44,7 +45,7 @@ render(
     <article>
       <h1>Composable</h1>
 
-      <Example syntax='jsx'>{`
+      <Snippet syntax='jsx'>{`
         import {Pie, Slice} from '@nicktomlin/pie'
 
         class DataPie {
@@ -59,7 +60,7 @@ render(
 
         DataPie.defaultProps = { data: [] }
 
-        <DataPie data={slices} />`}</Example>
+        <DataPie data={slices} />`}</Snippet>
 
       <DataPie data={slices} />
     </article>
