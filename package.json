@@ -2,7 +2,7 @@
   "name": "@nicktomlin/pie",
   "description": "A tiny pie chart plugin for (P)React.",
   "respository": "https://github.com:NickTomlin/pie.git",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "main": "dist/pie.cjs.js",
   "license": "MIT",
   "scripts": {
@@ -16,6 +16,7 @@
   "peerDependencies": {
     "react": ">=15"
   },
+  "files": ["dist"],
   "devDependencies": {
     "ava": "^0.21.0",
     "babel-core": "^6.25.0",
