@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Labels within a pie chart 1`] = `
+<svg
+  style={
+    Object {
+      "overflow": "visible",
+      "transform": "rotate(-90deg)",
+    }
+  }
+  viewBox="-1 -1 2 2"
+>
+  <svg
+    style={
+      Object {
+        "overflow": "visible",
+      }
+    }
+    viewBox="10 10 40 40"
+    x={1}
+    y={1.75}
+  >
+    <text
+      fill="CornFlowerBlue"
+      style={
+        Object {
+          "fontSize": "3px",
+          "transform": "rotate(90deg)",
+        }
+      }
+      y={0}
+    >
+      Blueberry
+    </text>
+    <text
+      fill="lightCoral"
+      style={
+        Object {
+          "fontSize": "3px",
+          "transform": "rotate(90deg)",
+        }
+      }
+      y={5}
+    >
+      Cherry
+    </text>
+  </svg>
+  <path
+    d="M 1 0 A 1 1 0 0 1 -0.8090169943749473 0.5877852522924732 L 0 0"
+    fill="CornFlowerBlue"
+  />
+  <path
+    d="M -0.8090169943749473 0.5877852522924732 A 1 1 0 1 1 1 -2.4492935982947064e-16 L 0 0"
+    fill="lightCoral"
+  />
+</svg>
+`;

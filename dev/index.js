@@ -1,6 +1,6 @@
 import React from 'react' // eslint-disable-line
 import { render } from 'react-dom'
-import {Pie, Slice} from '../dist/pie'
+import {Pie, Slice, LabelGroup, Label} from '../dist/pie'
 import Snippet from './snippet'
 
 const slices = [
@@ -63,6 +63,35 @@ render(
         <DataPie data={slices} />`}</Snippet>
 
       <DataPie data={slices} />
+    </article>
+
+    <article>
+      <h1>Labels</h1>
+
+      <Snippet syntax='jsx'>{`
+        import {Pie, Slice} from '@nicktomlin/pie'
+
+      <Pie>
+        <LabelGroup>
+          <Label fill='CornFlowerBlue'>Blueberry</Label>
+          <Label fill='lightCoral'>Cherry</Label>
+        </LabelGroup>
+
+        <Slice percent={0.4} fill='CornFlowerBlue' />
+        <Slice percent={0.6} fill='lightCoral' />
+      </Pie>
+      `}
+      </Snippet>
+
+      <Pie>
+        <LabelGroup>
+          <Label fill='CornFlowerBlue'>Blueberry</Label>
+          <Label fill='lightCoral'>Cherry</Label>
+        </LabelGroup>
+
+        <Slice percent={0.4} fill='CornFlowerBlue' />
+        <Slice percent={0.6} fill='lightCoral' />
+      </Pie>
     </article>
 
     <h1>Compatible with Preact</h1>

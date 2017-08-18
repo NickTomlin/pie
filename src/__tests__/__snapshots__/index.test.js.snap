@@ -4,6 +4,7 @@ exports[`Renders an svg pie chart 1`] = `
 <svg
   style={
     Object {
+      "overflow": "visible",
       "transform": "rotate(-90deg)",
     }
   }
