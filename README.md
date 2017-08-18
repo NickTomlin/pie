@@ -1,7 +1,7 @@
 pie
 ---
 
-A tiny pie chart plugin for (P)React.
+Create deliciously declarative pie charts with (P)React.
 
 :warning: this is published as an alpha not considered ready for wide use. I'm just playing around :warning:
 
@@ -19,9 +19,27 @@ import {Pie, Slice} from '@nicktomlin/pie'
 </Pie>
 ```
 
+Features
+---
+
+- [x] Actually renders a pie chart
+- [x] Preact compatible (vanilla without needing `preact-compat`)
+- [ ] Doughnut chart
+- [ ] Top/Bottom Labels
+- [ ] Hover effects (technically one could just pass props through to `Slice>` and be done with it but we could also make this easier)
+
 Prior Art
 ---
 
 - [hard things stolen from a simple pie chart in SVG](https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936)
 - Structure stolen from [Ryan Florence's "Compound Components" talk](https://www.youtube.com/watch?v=hEGg-3pIHlE)
 - You should probably just use [charts.js](http://www.chartjs.org/) or [d3](https://d3js.org/)
+
+Contributing
+---
+
+1. Fork and clone this repo
+2. Make your changes
+3. Please add a test if possible
+4. Ensure that `npm test` passes
+5. Open up a pull request
