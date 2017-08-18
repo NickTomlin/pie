@@ -1,4 +1,4 @@
-pie
+pie [![npm version](https://badge.fury.io/js/%40nicktomlin%2Fpie.svg)](https://badge.fury.io/js/%40nicktomlin%2Fpie) [![Build Status](https://travis-ci.org/NickTomlin/pie.svg?branch=master)](https://travis-ci.org/NickTomlin/pie)
 ---
 
 Create deliciously declarative pie charts with (P)React.
