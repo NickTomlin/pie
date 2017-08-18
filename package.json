@@ -5,6 +5,7 @@
   "version": "1.0.0-alpha.3",
   "main": "dist/pie.cjs.js",
   "license": "MIT",
+  "files": ["dist"],
   "scripts": {
     "start": "npm run build && npm run watch & webpack-dev-server --config dev/webpack.config.js --open",
     "test": "standard && jest",
