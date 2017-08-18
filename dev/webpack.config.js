@@ -1,12 +1,12 @@
-const path = require('path')
-const docs = path.resolve(__dirname, '..', 'docs')
-const dist = path.resolve(__dirname, '..', 'dist')
+const {resolve} = require('path')
+const docs = resolve(__dirname, '..', 'docs')
+const dist = resolve(__dirname, '..', 'dist')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    preact: path.resolve(__dirname, 'index.preact.js'),
-    react: path.resolve(__dirname, 'index.js')
+    preact: resolve(__dirname, 'index.preact.js'),
+    react: resolve(__dirname, 'index.js')
   },
   output: {
     filename: '[name].bundle.js',
