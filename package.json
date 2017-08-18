@@ -2,7 +2,7 @@
   "name": "@nicktomlin/pie",
   "description": "A tiny pie chart plugin for (P)React.",
   "respository": "https://github.com:NickTomlin/pie.git",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "main": "dist/pie.cjs.js",
   "license": "MIT",
   "files": ["dist"],
