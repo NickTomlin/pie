@@ -64,5 +64,22 @@ render(
 
       <DataPie data={slices} />
     </article>
+
+    <h1>Compatible with Preact</h1>
+    {/* Why is the preact snippet in the react file you ask?
+         Because getting compat to work for both without weird build hoops was too much
+         someday...
+    */}
+    <article>
+      <Snippet syntax='jsx'>{`
+        import {Pie, Slice} from '@nicktomlin/pie.preact'
+
+        <Pie>
+          <Slice percent={0.1} fill='Coral' />
+          <Slice percent={0.7} fill='CornFlowerBlue' />
+          <Slice percent={0.2} fill='#00ab6b' />
+        </Pie>
+       `}</Snippet>
+    </article>
   </div>
   , document.getElementById('container'))

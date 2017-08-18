@@ -6,17 +6,20 @@
   "main": "dist/pie.cjs.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run watch & webpack-dev-server --config dev/webpack.config.js --open",
+    "start": "npm run build && npm run watch & webpack-dev-server --config dev/webpack.config.js --open",
     "test": "standard",
-    "build": "rollup -c",
+    "build": "rollup -c && BUILD_TYPE=preact rollup -c",
     "build:production": "NODE_ENV=production npm run build",
     "watch": "rollup -c -w",
+    "docs": "npm run build:production && webpack --config dev/webpack.config.js",
     "prepublishOnly": "npm run build:production"
   },
   "peerDependencies": {
     "react": ">=15"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "ava": "^0.21.0",
     "babel-core": "^6.25.0",
@@ -25,7 +28,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "rollup-plugin-alias": "^1.3.1",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
     "preact": "^8.2.1",
@@ -47,6 +51,5 @@
       "docs/**",
       "dist/**"
     ]
-  },
-  "dependencies": {}
+  }
 }

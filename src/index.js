@@ -1,4 +1,5 @@
 import React, {cloneElement} from 'react'
+import {getProps, isComponentType} from './util'
 
 function getCoordinatesForPercent (percentage) {
   const x = Math.cos(2 * Math.PI * percentage)
@@ -39,8 +40,8 @@ export class Pie extends React.Component {
     let cumulativePercent = 0
 
     return this.props.children.map((child) => {
-      if (child.type === Slice) {
-        const {percent, fill} = child.props
+      if (isComponentType(child, Slice)) {
+        const {percent, fill} = getProps(child)
         const key = child.key || percent + fill
         const start = cumulativePercent
         cumulativePercent = cumulativePercent + percent

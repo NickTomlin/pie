@@ -1,14 +1,3 @@
 {
-  "presets": [
-    ["latest", {
-      "es2015": {
-        "modules": false
-      }
-    }]
-  ],
-  "plugins": [
-    "external-helpers",
-    "syntax-object-rest-spread",
-    ["transform-react-jsx", {}]
-  ]
+  "presets": "./.babelrc.js"
 }

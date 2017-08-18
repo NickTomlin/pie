@@ -4,7 +4,10 @@ const dist = path.resolve(__dirname, '..', 'dist')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'index.js'),
+  entry: {
+    preact: path.resolve(__dirname, 'index.preact.js'),
+    react: path.resolve(__dirname, 'index.js')
+  },
   output: {
     filename: '[name].bundle.js',
     path: docs
@@ -13,6 +16,7 @@ module.exports = {
     contentBase: dist,
     watchContentBase: true
   },
+  devtool: 'cheap-source-map',
   module: {
     rules: [
       {
@@ -21,7 +25,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [['transform-react-jsx', {}]]
+            plugins: [['transform-react-jsx']]
           }
         }
       }
@@ -30,12 +34,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Pie',
-      template: `${__dirname}/index.ejs`
+      template: `${__dirname}/template.html.ejs`
     })
   ],
   resolve: {
     alias: {
-      '@nicktomlin/pie': `${dist}/pie.cjs.js`
+      '@nicktomlin/pie': `${dist}/pie.js`,
+      '@nicktomlin/pie.preact': `${dist}/pie.preact.js`
     }
   }
 }
