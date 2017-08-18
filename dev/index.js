@@ -1,6 +1,6 @@
 import React from 'react' // eslint-disable-line
 import { render } from 'react-dom'
-import {Pie, Slice} from '@nicktomlin/pie'
+import {Pie, Slice} from '../dist/pie'
 import Snippet from './snippet'
 
 const slices = [
@@ -72,7 +72,7 @@ render(
     */}
     <article>
       <Snippet syntax='jsx'>{`
-        import {Pie, Slice} from '@nicktomlin/pie.preact'
+        import {Pie, Slice} from '@nicktomlin/pie/dist/pie.preact'
 
         <Pie>
           <Slice percent={0.1} fill='Coral' />

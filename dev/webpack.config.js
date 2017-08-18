@@ -34,11 +34,5 @@ module.exports = {
       title: 'Pie',
       template: `${__dirname}/template.html.ejs`
     })
-  ],
-  resolve: {
-    alias: {
-      '@nicktomlin/pie': `${dist}/pie.js`,
-      '@nicktomlin/pie.preact': `${dist}/pie.preact.js`
-    }
-  }
+  ]
 }

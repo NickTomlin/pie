@@ -10,7 +10,7 @@ npm i @nicktomlin/pie
 ```
 
 ```jsx
-import {Pie, Slice} from '@nicktomlin/pie'
+import {Pie, Slice} from '@nicktomlin/pie' // OR @nicktomlin/pie/dist/pie.preact
 
 <Pie>
   <Slice percent={0.1} fill='Coral' />

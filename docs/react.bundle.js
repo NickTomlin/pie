@@ -9756,8 +9756,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dist_pie__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dist_pie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__dist_pie__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__snippet__ = __webpack_require__(188);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -9787,10 +9787,10 @@ var DataPie = function (_React$Component) {
     key: 'render',
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Pie"],
+        __WEBPACK_IMPORTED_MODULE_2__dist_pie__["Pie"],
         null,
         this.props.data.map(function (x) {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Slice"], { key: x.fill, percent: x.percent, fill: x.fill });
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__dist_pie__["Slice"], { key: x.fill, percent: x.percent, fill: x.fill });
         })
       );
     }
@@ -9818,11 +9818,11 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
       '\n        import {Pie, Slice} from \'@nicktomlin/pie\'\n\n        <Pie>\n          <Slice percent={0.1} fill=\'Coral\' />\n          <Slice percent={0.7} fill=\'CornFlowerBlue\'/>\n          <Slice percent={0.2} fill=\'#00ab6b\' />\n        </Pie>'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Pie"],
+      __WEBPACK_IMPORTED_MODULE_2__dist_pie__["Pie"],
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Slice"], { percent: 0.1, fill: 'Coral' }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Slice"], { percent: 0.7, fill: 'CornFlowerBlue' }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Slice"], { percent: 0.2, fill: '#00ab6b' })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__dist_pie__["Slice"], { percent: 0.1, fill: 'Coral' }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__dist_pie__["Slice"], { percent: 0.7, fill: 'CornFlowerBlue' }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__dist_pie__["Slice"], { percent: 0.2, fill: '#00ab6b' })
     )
   ),
   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -9851,7 +9851,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_3__snippet__["a" /* default */],
       { syntax: 'jsx' },
-      '\n        import {Pie, Slice} from \'@nicktomlin/pie.preact\'\n\n        <Pie>\n          <Slice percent={0.1} fill=\'Coral\' />\n          <Slice percent={0.7} fill=\'CornFlowerBlue\' />\n          <Slice percent={0.2} fill=\'#00ab6b\' />\n        </Pie>\n       '
+      '\n        import {Pie, Slice} from \'@nicktomlin/pie/dist/pie.preact\'\n\n        <Pie>\n          <Slice percent={0.1} fill=\'Coral\' />\n          <Slice percent={0.7} fill=\'CornFlowerBlue\' />\n          <Slice percent={0.2} fill=\'#00ab6b\' />\n        </Pie>\n       '
     )
   )
 ), document.getElementById('container'));

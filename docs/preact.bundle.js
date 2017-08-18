@@ -1050,8 +1050,8 @@ var preact = {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dist_pie_preact__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dist_pie_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__dist_pie_preact__);
 
 
 
@@ -1063,11 +1063,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(Object(__WEBPACK_IMPORTED
     'article',
     null,
     Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      __WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact__["Pie"],
+      __WEBPACK_IMPORTED_MODULE_1__dist_pie_preact__["Pie"],
       null,
-      Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact__["Slice"], { percent: 0.1, fill: 'Coral' }),
-      Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact__["Slice"], { percent: 0.7, fill: 'CornFlowerBlue' }),
-      Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__nicktomlin_pie_preact__["Slice"], { percent: 0.2, fill: '#00ab6b' })
+      Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__dist_pie_preact__["Slice"], { percent: 0.1, fill: 'Coral' }),
+      Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__dist_pie_preact__["Slice"], { percent: 0.7, fill: 'CornFlowerBlue' }),
+      Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__dist_pie_preact__["Slice"], { percent: 0.2, fill: '#00ab6b' })
     )
   )
 ), document.getElementById('preact-container'));

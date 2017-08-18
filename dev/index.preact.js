@@ -1,5 +1,5 @@
 import { h, render } from 'preact'
-import {Pie, Slice} from '@nicktomlin/pie.preact'
+import {Pie, Slice} from '../dist/pie.preact'
 
 /** @jsx h */
 render(
