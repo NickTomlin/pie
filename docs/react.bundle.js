@@ -9764,19 +9764,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-const slices = [{ percent: 0.1, fill: 'Coral' }, { percent: 0.7, fill: 'CornflowerBlue' }, { percent: 0.2, fill: '#00ab6b' }];
+var slices = [{ percent: 0.1, fill: 'Coral' }, { percent: 0.7, fill: 'CornflowerBlue' }, { percent: 0.2, fill: '#00ab6b' }];
 
-class DataPie extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Pie"],
-      null,
-      this.props.data.map(x => {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Slice"], { key: x.fill, percent: x.percent, fill: x.fill });
-      })
-    );
+var DataPie = function (_React$Component) {
+  babelHelpers.inherits(DataPie, _React$Component);
+
+  function DataPie() {
+    babelHelpers.classCallCheck(this, DataPie);
+    return babelHelpers.possibleConstructorReturn(this, (DataPie.__proto__ || Object.getPrototypeOf(DataPie)).apply(this, arguments));
   }
-}
+
+  babelHelpers.createClass(DataPie, [{
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Pie"],
+        null,
+        this.props.data.map(function (x) {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Slice"], { key: x.fill, percent: x.percent, fill: x.fill });
+        })
+      );
+    }
+  }]);
+  return DataPie;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
 DataPie.defaultProps = { data: [] };
 
 Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -9793,14 +9805,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_3__snippet__["a" /* default */],
       { syntax: 'jsx' },
-      `
-        import {Pie, Slice} from '@nicktomlin/pie'
-
-        <Pie>
-          <Slice percent={0.1} fill='Coral' />
-          <Slice percent={0.7} fill='CornFlowerBlue'/>
-          <Slice percent={0.2} fill='#00ab6b' />
-        </Pie>`
+      '\n        import {Pie, Slice} from \'@nicktomlin/pie\'\n\n        <Pie>\n          <Slice percent={0.1} fill=\'Coral\' />\n          <Slice percent={0.7} fill=\'CornFlowerBlue\'/>\n          <Slice percent={0.2} fill=\'#00ab6b\' />\n        </Pie>'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_2__nicktomlin_pie__["Pie"],
@@ -9821,22 +9826,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_3__snippet__["a" /* default */],
       { syntax: 'jsx' },
-      `
-        import {Pie, Slice} from '@nicktomlin/pie'
-
-        class DataPie {
-          render () {
-            return <Pie>
-              {this.props.data.map((x) => {
-                return <Slice percent={x.percent} fill={x.fill} />
-              })}
-            </Pie>
-          }
-        }
-
-        DataPie.defaultProps = { data: [] }
-
-        <DataPie data={slices} />`
+      '\n        import {Pie, Slice} from \'@nicktomlin/pie\'\n\n        class DataPie {\n          render () {\n            return <Pie>\n              {this.props.data.map((x) => {\n                return <Slice percent={x.percent} fill={x.fill} />\n              })}\n            </Pie>\n          }\n        }\n\n        DataPie.defaultProps = { data: [] }\n\n        <DataPie data={slices} />'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DataPie, { data: slices })
   ),
@@ -9851,15 +9841,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_3__snippet__["a" /* default */],
       { syntax: 'jsx' },
-      `
-        import {Pie, Slice} from '@nicktomlin/pie.preact'
-
-        <Pie>
-          <Slice percent={0.1} fill='Coral' />
-          <Slice percent={0.7} fill='CornFlowerBlue' />
-          <Slice percent={0.2} fill='#00ab6b' />
-        </Pie>
-       `
+      '\n        import {Pie, Slice} from \'@nicktomlin/pie.preact\'\n\n        <Pie>\n          <Slice percent={0.1} fill=\'Coral\' />\n          <Slice percent={0.7} fill=\'CornFlowerBlue\' />\n          <Slice percent={0.2} fill=\'#00ab6b\' />\n        </Pie>\n       '
     )
   )
 ), document.getElementById('container'));
@@ -22496,99 +22478,241 @@ module.exports = ReactDOMInvalidARIAHook;
 
 "use strict";
 
-function _interopDefault(e) {
-  return e && "object" == typeof e && "default" in e ? e.default : e;
-}function isComponentType(e, t) {
-  return e.nodeName ? e.nodeName.name === t.name : e.type === t;
-}function getProps(e) {
-  return e.props || e.attributes;
-}function getCoordinatesForPercent(e) {
-  return [Math.cos(2 * Math.PI * e), Math.sin(2 * Math.PI * e)];
-}Object.defineProperty(exports, "__esModule", { value: !0 });var React = __webpack_require__(32),
-    React__default = _interopDefault(React),
-    classCallCheck = function (e, t) {
-  if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-},
-    createClass = function () {
-  function e(e, t) {
-    for (var r = 0; r < t.length; r++) {
-      var n = t[r];n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function _interopDefault(ex) {
+  return ex && (typeof ex === 'undefined' ? 'undefined' : babelHelpers.typeof(ex)) === 'object' && 'default' in ex ? ex['default'] : ex;
+}
+
+var React = __webpack_require__(32);
+var React__default = _interopDefault(React);
+
+function isComponentType(elem, klass) {
+  if (elem.nodeName) {
+    return elem.nodeName.name === klass.name;
+  } else {
+    return elem.type === klass;
+  }
+}
+
+function getProps(elem) {
+  return elem.props || elem.attributes;
+}
+
+var classCallCheck = function classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
     }
-  }return function (t, r, n) {
-    return r && e(t.prototype, r), n && e(t, n), t;
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
   };
-}(),
-    _extends = Object.assign || function (e) {
-  for (var t = 1; t < arguments.length; t++) {
-    var r = arguments[t];for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (e[n] = r[n]);
-  }return e;
-},
-    inherits = function (e, t) {
-  if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + typeof t);e.prototype = Object.create(t && t.prototype, { constructor: { value: e, enumerable: !1, writable: !0, configurable: !0 } }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t);
-},
-    objectWithoutProperties = function (e, t) {
-  var r = {};for (var n in e) t.indexOf(n) >= 0 || Object.prototype.hasOwnProperty.call(e, n) && (r[n] = e[n]);return r;
-},
-    possibleConstructorReturn = function (e, t) {
-  if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return !t || "object" != typeof t && "function" != typeof t ? e : t;
-},
-    slicedToArray = function () {
-  function e(e, t) {
-    var r = [],
-        n = !0,
-        o = !1,
-        i = void 0;try {
-      for (var a, c = e[Symbol.iterator](); !(n = (a = c.next()).done) && (r.push(a.value), !t || r.length !== t); n = !0);
-    } catch (e) {
-      o = !0, i = e;
+}();
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var inherits = function inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : babelHelpers.typeof(superClass)));
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+var objectWithoutProperties = function objectWithoutProperties(obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
+
+var possibleConstructorReturn = function possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && ((typeof call === 'undefined' ? 'undefined' : babelHelpers.typeof(call)) === "object" || typeof call === "function") ? call : self;
+};
+
+var slicedToArray = function () {
+  function sliceIterator(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
     } finally {
       try {
-        !n && c.return && c.return();
+        if (!_n && _i["return"]) _i["return"]();
       } finally {
-        if (o) throw i;
+        if (_d) throw _e;
       }
-    }return r;
-  }return function (t, r) {
-    if (Array.isArray(t)) return t;if (Symbol.iterator in Object(t)) return e(t, r);throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+
+    return _arr;
+  }
+
+  return function (arr, i) {
+    if (Array.isArray(arr)) {
+      return arr;
+    } else if (Symbol.iterator in Object(arr)) {
+      return sliceIterator(arr, i);
+    } else {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
   };
-}(),
-    Slice = function (e) {
-  function t() {
-    return classCallCheck(this, t), possibleConstructorReturn(this, (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments));
-  }return inherits(t, e), createClass(t, [{ key: "generatePath", value: function (e, t) {
-      var r = getCoordinatesForPercent(e),
-          n = slicedToArray(r, 2),
-          o = n[0],
-          i = n[1],
-          a = getCoordinatesForPercent(e + t),
-          c = slicedToArray(a, 2),
-          u = c[0],
-          s = c[1];return ["M " + o + " " + i, "A 1 1 0 " + (t > .5 ? 1 : 0) + " 1 " + u + " " + s, "L 0 0"].join(" ");
-    } }, { key: "render", value: function () {
-      var e = this.props,
-          t = e.start,
-          r = e.percent,
-          n = objectWithoutProperties(e, ["start", "percent"]);return React__default.createElement("path", _extends({}, n, { d: this.generatePath(t, r), fill: this.props.fill }));
-    } }]), t;
-}(React__default.Component),
-    svgStyle = { transform: "rotate(-90deg)" },
-    Pie = function (e) {
-  function t() {
-    return classCallCheck(this, t), possibleConstructorReturn(this, (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments));
-  }return inherits(t, e), createClass(t, [{ key: "renderSlices", value: function () {
-      var e = 0;return this.props.children.map(function (t) {
-        if (isComponentType(t, Slice)) {
-          var r = getProps(t),
-              n = r.percent,
-              o = r.fill,
-              i = t.key || n + o,
-              a = e;return e += n, React.cloneElement(t, { key: i, start: a, percent: n, fill: o });
-        }return t;
+}();
+
+function getCoordinatesForPercent(percentage) {
+  var x = Math.cos(2 * Math.PI * percentage);
+  var y = Math.sin(2 * Math.PI * percentage);
+
+  return [x, y];
+}
+
+var Slice = function (_React$Component) {
+  inherits(Slice, _React$Component);
+
+  function Slice() {
+    classCallCheck(this, Slice);
+    return possibleConstructorReturn(this, (Slice.__proto__ || Object.getPrototypeOf(Slice)).apply(this, arguments));
+  }
+
+  createClass(Slice, [{
+    key: 'generatePath',
+    value: function generatePath(start, slicePercent) {
+      var _getCoordinatesForPer = getCoordinatesForPercent(start),
+          _getCoordinatesForPer2 = slicedToArray(_getCoordinatesForPer, 2),
+          startX = _getCoordinatesForPer2[0],
+          startY = _getCoordinatesForPer2[1];
+
+      var _getCoordinatesForPer3 = getCoordinatesForPercent(start + slicePercent),
+          _getCoordinatesForPer4 = slicedToArray(_getCoordinatesForPer3, 2),
+          endX = _getCoordinatesForPer4[0],
+          endY = _getCoordinatesForPer4[1];
+
+      var largeArcFlag = slicePercent > 0.5 ? 1 : 0;
+
+      return ['M ' + startX + ' ' + startY, 'A 1 1 0 ' + largeArcFlag + ' 1 ' + endX + ' ' + endY, 'L 0 0'].join(' ');
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          start = _props.start,
+          percent = _props.percent,
+          rest = objectWithoutProperties(_props, ['start', 'percent']);
+
+      return React__default.createElement('path', _extends({}, rest, {
+        d: this.generatePath(start, percent),
+        fill: this.props.fill
+      }));
+    }
+  }]);
+  return Slice;
+}(React__default.Component);
+
+var svgStyle = { transform: 'rotate(-90deg)'
+
+  // this is the poor person's technique introduced by
+  // https://hackernoon.com/a-simple-pie-chart-in-svg-dbdd653b6936
+};var Pie = function (_React$Component2) {
+  inherits(Pie, _React$Component2);
+
+  function Pie() {
+    classCallCheck(this, Pie);
+    return possibleConstructorReturn(this, (Pie.__proto__ || Object.getPrototypeOf(Pie)).apply(this, arguments));
+  }
+
+  createClass(Pie, [{
+    key: 'renderSlices',
+    value: function renderSlices() {
+      var cumulativePercent = 0;
+
+      return this.props.children.map(function (child) {
+        if (isComponentType(child, Slice)) {
+          var _getProps = getProps(child),
+              percent = _getProps.percent,
+              fill = _getProps.fill;
+
+          var key = child.key || percent + fill;
+          var start = cumulativePercent;
+          cumulativePercent = cumulativePercent + percent;
+
+          return React.cloneElement(child, {
+            key: key,
+            start: start,
+            percent: percent,
+            fill: fill
+          });
+        } else {
+          return child;
+        }
       });
-    } }, { key: "render", value: function () {
-      return React__default.createElement("svg", { style: svgStyle, viewBox: "-1 -1 2 2" }, this.renderSlices());
-    } }]), t;
-}(React__default.Component);exports.Slice = Slice, exports.Pie = Pie;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React__default.createElement('svg', {
+        style: svgStyle,
+        viewBox: '-1 -1 2 2'
+      }, this.renderSlices());
+    }
+  }]);
+  return Pie;
+}(React__default.Component);
+
+exports.Slice = Slice;
+exports.Pie = Pie;
 
 /***/ }),
 /* 188 */
@@ -22602,19 +22726,19 @@ function _interopDefault(e) {
 
 // alas, prism and node has some rough spots
 // https://github.com/PrismJS/prism/issues/593#issuecomment-226143416
-const Prism = __webpack_require__(189);
+var Prism = __webpack_require__(189);
 __webpack_require__(191);
 __webpack_require__(192);
 
 function highlight(syntax, code) {
-  let normalized = Prism.plugins.NormalizeWhitespace.normalize(code);
-  let highlighted = Prism.highlight(normalized, Prism.languages[syntax]);
+  var normalized = Prism.plugins.NormalizeWhitespace.normalize(code);
+  var highlighted = Prism.highlight(normalized, Prism.languages[syntax]);
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('code', { key: code, dangerouslySetInnerHTML: { __html: highlighted } });
 }
 
 function Snippet(props) {
-  let children = typeof props.children === 'string' ? [props.children] : props.children;
-  let code = children.map(highlight.bind(null, props.syntax));
+  var children = typeof props.children === 'string' ? [props.children] : props.children;
+  var code = children.map(highlight.bind(null, props.syntax));
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'pre',

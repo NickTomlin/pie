@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders an svg pie chart 1`] = `
+<svg
+  style={
+    Object {
+      "transform": "rotate(-90deg)",
+    }
+  }
+  viewBox="-1 -1 2 2"
+>
+  <path
+    d="M 1 0 A 1 1 0 0 1 0.8090169943749475 0.5877852522924731 L 0 0"
+    fill="Coral"
+  />
+  <path
+    d="M 0.8090169943749475 0.5877852522924731 A 1 1 0 1 1 0.30901699437494723 -0.9510565162951536 L 0 0"
+    fill="CornFlowerBlue"
+  />
+  <path
+    d="M 0.30901699437494723 -0.9510565162951536 A 1 1 0 0 1 1 -2.4492935982947064e-16 L 0 0"
+    fill="#00ab6b"
+  />
+</svg>
+`;

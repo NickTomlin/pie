@@ -21,12 +21,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules|dist)/, // we pre-bundle source
         use: {
           loader: 'babel-loader',
-          options: {
-            plugins: [['transform-react-jsx']]
-          }
+          options: require('../.babelrc.js')
         }
       }
     ]
