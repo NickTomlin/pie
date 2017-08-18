@@ -4,5 +4,5 @@ module.exports = {
   presets: [['env', IS_TEST ? {} : { 'modules': false }], 'react'],
   plugins: [
     'syntax-object-rest-spread'
-  ].filter(Boolean)
+  ]
 }
