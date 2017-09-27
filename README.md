@@ -24,7 +24,7 @@ Features
 
 - [x] Actually renders a pie chart
 - [x] Preact compatible (vanilla without needing `preact-compat`)
-- [ ] Doughnut chart
+- [x] Doughnut chart
 - [ ] Top/Bottom Labels
 - [ ] Hover effects (technically one could just pass props through to `Slice>` and be done with it but we could also make this easier)
 
