@@ -14,3 +14,16 @@ test('Renders an svg pie chart', () => {
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
+
+test('Supports donut option', () => {
+  const component = renderer.create(
+    <Pie donut>
+      <Slice percent={0.1} fill='Coral' />
+      <Slice percent={0.7} fill='CornFlowerBlue' />
+      <Slice percent={0.2} fill='#00ab6b' />
+    </Pie>
+  )
+
+  let tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
+})

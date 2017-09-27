@@ -1,5 +1,6 @@
 import React, {cloneElement} from 'react'
 import Slice from './slice'
+import { isComponentType, getProps } from './util'
 
 const svgStyle = { transform: 'rotate(-90deg)' }
 
@@ -8,11 +9,10 @@ const svgStyle = { transform: 'rotate(-90deg)' }
 export default class Pie extends React.Component {
   renderSlices () {
     let cumulativePercent = 0
-
-    return this.props.children.map((child) => {
-      // TODO: genericize this for preact (e.g. check nodeName and not just type)
-      if (child.type === Slice) {
-        const {percent, fill} = child.props
+    const { children, donut } = this.props
+    return children.map((child) => {
+      if (isComponentType(child, Slice)) {
+        const {percent, fill} = getProps(child)
         const key = child.key || percent + fill
         const start = cumulativePercent
         cumulativePercent = cumulativePercent + percent
@@ -21,7 +21,8 @@ export default class Pie extends React.Component {
           key,
           start,
           percent,
-          fill
+          fill,
+          donut
         })
       } else { return child }
     })

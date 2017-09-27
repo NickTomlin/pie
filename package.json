@@ -5,6 +5,7 @@
   "version": "1.0.0-alpha.4",
   "main": "dist/pie.cjs.js",
   "license": "MIT",
+  "contributors": ["Sean Zellmer <sean@lejeunerenard.com> (https://lejeunerenard.com)"],
   "files": [
     "dist"
   ],

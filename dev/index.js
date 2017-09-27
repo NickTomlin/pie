@@ -32,10 +32,23 @@ render(
           <Slice percent={0.1} fill='Coral' />
           <Slice percent={0.7} fill='CornFlowerBlue'/>
           <Slice percent={0.2} fill='#00ab6b' />
-        </Pie>`}
-      </Snippet>
+        </Pie>
+      `}</Snippet>
 
       <Pie>
+        <Slice percent={0.1} fill='Coral' />
+        <Slice percent={0.7} fill='CornFlowerBlue' />
+        <Slice percent={0.2} fill='#00ab6b' />
+      </Pie>
+
+      <Snippet syntax='jsx'>{`
+          <Pie donut>
+            <Slice percent={0.1} fill='Coral' />
+            <Slice percent={0.7} fill='CornFlowerBlue' />
+            <Slice percent={0.2} fill='#00ab6b' />
+          </Pie>
+      `}</Snippet>
+      <Pie donut>
         <Slice percent={0.1} fill='Coral' />
         <Slice percent={0.7} fill='CornFlowerBlue' />
         <Slice percent={0.2} fill='#00ab6b' />
