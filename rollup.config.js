@@ -17,7 +17,6 @@ export default {
     alias(IS_PREACT ? {react: 'preact'} : {}),
     resolve(),
     babel({
-      externalHelpers: true,
       exclude: 'node_modules/**'
     }),
     (IS_PROD && uglify())
