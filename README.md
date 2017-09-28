@@ -3,7 +3,7 @@ pie [![npm version](https://badge.fury.io/js/%40nicktomlin%2Fpie.svg)](https://b
 
 Create deliciously declarative pie charts with (P)React.
 
-:warning: this is published as an alpha not considered ready for wide use. I'm just playing around :warning:
+> This is currently in alpha; feel free to use it but don't get your hopes up
 
 ```shell
 npm i @nicktomlin/pie
